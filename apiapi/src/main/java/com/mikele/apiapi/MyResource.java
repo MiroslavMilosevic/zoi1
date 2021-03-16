@@ -18,6 +18,7 @@ import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -34,23 +35,33 @@ public class MyResource {
     @GET
     @Path("all/objects/{username}/{password}")
     @Produces(MediaType.APPLICATION_JSON)
-    public ArrayList<Telefon> getIt(@PathParam("username") String username, @PathParam("password") String password) throws SQLException {
+    public ArrayList<Telefon> getIt(@PathParam("username") String username, @PathParam("password") String password, 
+    		@QueryParam("imgUrl") String imgUrl, @QueryParam("token") String token) throws SQLException {
  	   	
     	
     	MyServices myServices = new MyServices();
-    	
+    	System.out.println("_____________________________________________________________________________________________________");
+        System.out.println(imgUrl);    	
+    	System.out.println("_____________________________________________________________________________________________________");
+
 // /   	Service service = new Service();
        // return service.returnCovekListFromDatabase();
         return myServices.returnList(username, password);
     }
     
     @POST
-    @Path("insert/{marka}/{model}")
+    @Path("insert/{marka}/{model}/{cena}/{kategorija}/{os}/{ram}/{rom}/{standardi}/{image}/{naslov}")
 //    @Produces(MediaType.APPLICATION_JSON)
 //    @Consumes(MediaType.TEXT_PLAIN)
-    public void insertPhone(@PathParam("marka") String marka, @PathParam("model") String model ) {
+    public void insertPhone(@PathParam("marka") String marka, @PathParam("model") String model,
+    		 @PathParam("cena") String cena, @PathParam("kategorija") String kategorija,
+    		 @PathParam("os") String os, @PathParam("ram") String ram, @PathParam("rom") String rom,
+    		 @PathParam("standardi") String standardi, @PathParam("image") String image, @PathParam("naslov") String naslov
+    		) {
  	
     	System.out.println(marka+" +++++++++++++++++++++++++++++++++++++++++++++++++++++++"+model);
+    	
+    	System.out.println(marka+model+cena+kategorija+os+ram+rom+standardi+naslov+image);
     	
    
     }

@@ -36,22 +36,27 @@ public ArrayList<Telefon> returnList(String username, String password){
 		
 
 		ResultSet rs = null;
+		ResultSet rs2 = null;
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");  
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306","root","123456789");
 			Statement stmt = conn.createStatement();
-			rs=stmt.executeQuery("SELECT * FROM telefoni_baza.telefoni,  telefoni_baza.admini");
+			Statement stmt2 = conn.createStatement();
+			rs=stmt.executeQuery("SELECT * FROM telefoni_baza.telefoni");
+			rs2=stmt2.executeQuery("SELECT * FROM telefoni_baza.admini");
 			
 			while(rs.next())
-			{
-				
+			{	
 			listaTelefona.add(new Telefon(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), 
 					rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11)));
 				
-			listaAdmina.add(new Admin(rs.getInt(12), rs.getString(13), rs.getString(14)));
-				System.out.println(rs.getInt(12)+ rs.getString(13)+ rs.getString(14));
-			}		
+		
+			}	
+			while(rs2.next()) {
+				listaAdmina.add(new Admin(rs2.getInt(1), rs2.getString(2), rs2.getString(3)));
+				System.out.println(rs2.getInt(1)+ rs2.getString(2)+ rs2.getString(3));
+			}
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -65,7 +70,16 @@ public ArrayList<Telefon> returnList(String username, String password){
 		}else {
 			return new ArrayList<Telefon>();
 		}
-	}
+	}///
+
+     public boolean insertNewPhone(Telefon telefon, String username, String password) {
+    	 
+    	 
+    	 
+    	 return false;
+     }
+
+
 	
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 public boolean isAdminValid(ArrayList<Admin> listaAdmina, String username, String password) {
