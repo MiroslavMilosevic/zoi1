@@ -33,14 +33,17 @@ public class MyResource {
 
 
     @GET
-    @Path("all/objects/{username}/{password}")
+    @Path("all/objects/")
     @Produces(MediaType.APPLICATION_JSON)
-    public ArrayList<Telefon> getIt(@PathParam("username") String username, @PathParam("password") String password, 
+    public ArrayList<Telefon> getIt(@QueryParam("username") String username, @QueryParam("password") String password, 
     		@QueryParam("imgUrl") String imgUrl, @QueryParam("token") String token) throws SQLException {
  	   	
     	
     	MyServices myServices = new MyServices();
     	System.out.println("_____________________________________________________________________________________________________");
+        System.out.println(username);    	
+        System.out.println(password);    	
+        System.out.println(token);    	
         System.out.println(imgUrl);    	
     	System.out.println("_____________________________________________________________________________________________________");
 
@@ -49,19 +52,23 @@ public class MyResource {
         return myServices.returnList(username, password);
     }
     
-    @POST
-    @Path("insert/{marka}/{model}/{cena}/{kategorija}/{os}/{ram}/{rom}/{standardi}/{image}/{naslov}")
-//    @Produces(MediaType.APPLICATION_JSON)
-//    @Consumes(MediaType.TEXT_PLAIN)
-    public void insertPhone(@PathParam("marka") String marka, @PathParam("model") String model,
-    		 @PathParam("cena") String cena, @PathParam("kategorija") String kategorija,
-    		 @PathParam("os") String os, @PathParam("ram") String ram, @PathParam("rom") String rom,
-    		 @PathParam("standardi") String standardi, @PathParam("image") String image, @PathParam("naslov") String naslov
+    @GET
+    @Path("insert/")
+    //  @Path("insert/{marka}/{model}/{cena}/{kategorija}/{os}/{ram}/{rom}/{standardi}/{image}/{naslov}")
+    @Produces(MediaType.APPLICATION_JSON)
+   // @Consumes(MediaType.TEXT_PLAIN, MediaType.APPLICATION_JSON)
+    public void insertPhone(@QueryParam("username") String username, @QueryParam("password") String password  ,@QueryParam("marka") String marka, @QueryParam("model") String model,
+    		@QueryParam("cena") String cena, @QueryParam("kategorija") String kategorija,
+    		@QueryParam("os") String os, @QueryParam("ram") String ram, @QueryParam("rom") String rom,
+    		@QueryParam("standardi") String standardi, @QueryParam("imgUrl") String imgUrl, @QueryParam("naslov") String naslov
     		) {
  	
     	System.out.println(marka+" +++++++++++++++++++++++++++++++++++++++++++++++++++++++"+model);
     	
-    	System.out.println(marka+model+cena+kategorija+os+ram+rom+standardi+naslov+image);
+    	System.out.println(marka+model+cena+kategorija+os+ram+rom+standardi+naslov+imgUrl);
+    	Telefon telefon = new Telefon(0, "huawei", "mate20-lite", "550", "a3" , "Android", "8", "256", "3G,4G", "https://fdn2.gsmarena.com/vv/bigpic/huawei-mate-20-lite-r1.jpg", "novi huawei na popustu !!!");
+    	MyServices ms = new MyServices();
+    	ms.insertNewPhone(telefon, username, password);
     	
    
     }

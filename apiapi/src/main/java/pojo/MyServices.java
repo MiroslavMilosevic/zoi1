@@ -9,11 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class MyServices {
-
-	
-	
-	
+public class MyServices {	
 //	public ArrayList<Telefon> returnList(){
 //		
 //		ArrayList<Telefon> listaTelefona = new ArrayList<Telefon>();
@@ -73,7 +69,23 @@ public ArrayList<Telefon> returnList(String username, String password){
 	}///
 
      public boolean insertNewPhone(Telefon telefon, String username, String password) {
-    	 
+		        ResultSet rs = null;	
+    	 try {
+				Class.forName("com.mysql.jdbc.Driver");  
+				Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306","root","123456789");	
+				Statement stmt = conn.createStatement();	
+				
+			
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+    	// System.out.println("telefon ucitan");
+    //	 System.out.println(username + password +"   "+telefon.getMark());
     	 
     	 
     	 return false;
