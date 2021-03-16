@@ -8,6 +8,8 @@ import java.io.OutputStream;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 
@@ -20,6 +22,7 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import pojo.MyServices;
@@ -46,6 +49,9 @@ public class MyResource {
         System.out.println(token);    	
         System.out.println(imgUrl);    	
     	System.out.println("_____________________________________________________________________________________________________");
+   //	response.setHeader("Access-Control-Allow-Origin", "*");
+    //	response.
+    	
 
 // /   	Service service = new Service();
        // return service.returnCovekListFromDatabase();
@@ -56,7 +62,6 @@ public class MyResource {
     @Path("insert/")
     //  @Path("insert/{marka}/{model}/{cena}/{kategorija}/{os}/{ram}/{rom}/{standardi}/{image}/{naslov}")
     @Produces(MediaType.APPLICATION_JSON)
-   // @Consumes(MediaType.TEXT_PLAIN, MediaType.APPLICATION_JSON)
     public void insertPhone(@QueryParam("username") String username, @QueryParam("password") String password  ,@QueryParam("marka") String marka, @QueryParam("model") String model,
     		@QueryParam("cena") String cena, @QueryParam("kategorija") String kategorija,
     		@QueryParam("os") String os, @QueryParam("ram") String ram, @QueryParam("rom") String rom,
@@ -68,12 +73,27 @@ public class MyResource {
     	System.out.println(marka+model+cena+kategorija+os+ram+rom+standardi+naslov+imgUrl);
     	Telefon telefon = new Telefon(0, "huawei", "mate20-lite", "550", "a3" , "Android", "8", "256", "3G,4G", "https://fdn2.gsmarena.com/vv/bigpic/huawei-mate-20-lite-r1.jpg", "novi huawei na popustu !!!");
     	MyServices ms = new MyServices();
-    	ms.insertNewPhone(telefon, username, password);
-    	
+    	boolean b = ms.insertNewPhone(telefon, username, password);
+    	 System.out.println(b);
    
     }
     
     
+    @GET
+    @Path("log/")
+    //  @Path("insert/{marka}/{model}/{cena}/{kategorija}/{os}/{ram}/{rom}/{standardi}/{image}/{naslov}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public boolean insertPhone(@QueryParam("username") String username, @QueryParam("password") String password ) {
+ 	
+    	MyServices ms = new MyServices();
+    
+   return ms.isAdminValid(ms.getListaAdmina(), username, password);
+    } 
+    
+    
+    
+    
+    //
     
     
     
