@@ -92,11 +92,11 @@ public class MyServices {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if (isAdminValid(listaAdmina, username, password)) {
+	//	if (isAdminValid(listaAdmina, username, password)) {
 			return listaTelefona;
-		} else {
-			return new ArrayList<Telefon>();
-		}
+	//	} else {
+	//		return new ArrayList<Telefon>();
+	//	}         zato sto i korisnik bez sifre ima pristup obicnoj stranici
 	}///
 
 	public boolean insertNewPhone(Telefon telefon, String username, String password) {
