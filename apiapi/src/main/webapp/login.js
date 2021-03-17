@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 //import urlConvert from './scriptFiles/urlConvert.js'
 let buttonSubmit = document.getElementById("buttonSubmit");
 buttonSubmit.addEventListener('click', function() {
@@ -17,8 +15,9 @@ buttonSubmit.addEventListener('click', function() {
 		if (res.data == true) {
 			localStorage.setItem('username', username_input.value);
 			localStorage.setItem('password', password_input.value);
+			localStorage.setItem('loged', 'true');
 			console.log('uspesno setovan localStorage')
-			window.location.href = "./index.html";
+			window.location.href = "./addPhone.html";
 		}
 
 	})

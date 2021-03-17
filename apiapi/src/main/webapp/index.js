@@ -6,9 +6,8 @@ console.log(localStorage.getItem('username'))
 console.log(localStorage.getItem('password'))
 let gotoLoginButton = document.getElementById('gotoLogin');
 gotoLoginButton.addEventListener('click', ()=>{
-	
 			window.location.href = "./login.html";
-})
+})///gotoLoginButton funkcionalnost
 
 
 let niz = [];  

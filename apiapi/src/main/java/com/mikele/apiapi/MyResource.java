@@ -71,7 +71,7 @@ public class MyResource {
     	System.out.println(marka+" +++++++++++++++++++++++++++++++++++++++++++++++++++++++"+model);
     	
     	System.out.println(marka+model+cena+kategorija+os+ram+rom+standardi+naslov+imgUrl);
-    	Telefon telefon = new Telefon(0, "huawei", "mate20-lite", "550", "a3" , "Android", "8", "256", "3G,4G", "https://fdn2.gsmarena.com/vv/bigpic/huawei-mate-20-lite-r1.jpg", "novi huawei na popustu !!!");
+    	Telefon telefon = new Telefon(0, marka, model, cena, kategorija , os, ram, rom, standardi, imgUrl, naslov);
     	MyServices ms = new MyServices();
     	boolean b = ms.insertNewPhone(telefon, username, password);
     	 System.out.println(b);
