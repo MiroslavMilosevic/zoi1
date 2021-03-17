@@ -3,6 +3,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here izmen1a3444dfas</title>
+<link rel="stylesheet" type="text/css" href="./style/login.css">
 <script src=""></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
@@ -12,26 +13,25 @@
 	<h1>asdfdf21dfdasf2asa1s</h1>
 	
 	<div id="app">
-	<input type="text" name="username" id="username" class="input-login">
+	<input type="text" name="username" id="username" class="input-login" placeholder="username">
 	<br>
-	<input type="text" name="password" id="password" class="input-login">
+	<input type="password" name="password" id="password" class="input-login" placeholder="password">
 	<br>
 	<button id="buttonSubmit">Log In</button>
 	</div>
+	   
+	   <br>
+	   <h2 id='errorHeader'></h2>
+	
+	
 	<div style="background-color: aqua; position: fixed; bottom: 0px">
-	<button id="buttonLogin">Kontaktiraj</button>
+	<button id="buttonLogin">Kontaktiraaj</button>
 	<button id="insert">Login</button>
 	<button id="reset">reset localStorage</button>
       </div>
-	<script type="module" src="./login.js"></script>
-	<script>
-	          document.getElementById('reset').addEventListener('click', function() {
-	        	  console.log(localStorage.getItem('username'), localStorage.getItem('password'));
-	          console.log('skripta')
-	  		localStorage.setItem('username', '');
-			localStorage.setItem('password', '');
-	          })
-	</script>
+	<script type="module" src="./login2.js"></script>
+
+    
 </body>
 </html>
 

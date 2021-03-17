@@ -43,19 +43,7 @@ public class MyServices {
 		}
 
 	}
-//	public ArrayList<Telefon> returnList(){
-//		
-//		ArrayList<Telefon> listaTelefona = new ArrayList<Telefon>();
-//		
-//		
-//		listaTelefona.add(new Telefon(1, "A50", "Samsung", "4GB", "https://images.samsung.com/is/image/samsung/ie-galaxy-a51-sm-a515fzkveua-front-206100441?$720_576_PNG$"));
-//		listaTelefona.add(new Telefon(2, "A60", "Samsung", "4GB", "https://images.samsung.com/is/image/samsung/ie-galaxy-a51-sm-a515fzkveua-front-206100441?$720_576_PNG$"));
-//		listaTelefona.add(new Telefon(3, "A70", "Samsung", "4GB", "https://images.samsung.com/is/image/samsung/ie-galaxy-a51-sm-a515fzkveua-front-206100441?$720_576_PNG$"));
-//		listaTelefona.add(new Telefon(4, "A80", "Samsung", "4GB", "https://images.samsung.com/is/image/samsung/ie-galaxy-a51-sm-a515fzkveua-front-206100441?$720_576_PNG$"));
-//		listaTelefona.add(new Telefon(5, "A90", "Samsung", "4GB", "https://images.samsung.com/is/image/samsung/ie-galaxy-a51-sm-a515fzkveua-front-206100441?$720_576_PNG$"));
-//	
-//	return listaTelefona;
-//	}
+
 
 	public ArrayList<Telefon> returnList(String username, String password) {
 
@@ -79,11 +67,7 @@ public class MyServices {
 						rs.getString(10), rs.getString(11)));
 
 			}
-			// while(rs2.next()) {
-			// listaAdmina.add(new Admin(rs2.getInt(1), rs2.getString(2),
-			// rs2.getString(3)));
-			// System.out.println(rs2.getInt(1)+ rs2.getString(2)+ rs2.getString(3));
-			// }
+			
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -141,6 +125,28 @@ public class MyServices {
 			return false;
 		}
 
+		return false;
+	}
+	//////////////////////////////////////////////////////////////////////////////
+	public boolean deletePhone(int id, String username, String password) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306", "root", "123456789");
+			PreparedStatement preparedStmt = conn.prepareStatement("DELETE FROM telefoni_baza.telefoni WHERE (id = ?)");
+			preparedStmt.setInt(1, id);
+			if (isAdminValid(listaAdmina, username, password)) {
+				preparedStmt.execute();
+				return true;
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		return false;
 	}
 

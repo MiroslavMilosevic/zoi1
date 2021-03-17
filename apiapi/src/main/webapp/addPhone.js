@@ -1,4 +1,4 @@
-
+import repaintAddPhone from './scriptFiles/repaintAddPhone.js'
 import firebase1 from './scriptFiles/firebase1.js'
 import {addCheck1, standardi} from './scriptFiles/addCheckFnk.js'
 console.log('adphone js')
@@ -10,7 +10,7 @@ logOutButton.addEventListener('click', function(){
 		window.location.href = "./index.html";
 		
 })
-console.log('adphone js')
+console.log('bbldflasjlas')
 
 let buttonDodaj = document.getElementById('buttonDodaj');
 
@@ -33,15 +33,18 @@ buttonDodaj.addEventListener('click', ()=>{
 	let standardiStr = standardi(G3, G4, LTE, GSM)
 	
 	let isValid = addCheck1(naslov, marka, model, cena, procesor, os, ram, rom, standardiStr, slika)
-	if(isValid){
-			       firebase1(naslov.value, marka.value, model.value, cena.value, procesor.value, os.value, ram.value, rom.value, G3.value,G4.value, LTE.value ,GSM.value, slika.files[0])
+	if(isValid){ 
+		             console.log('slika[0]', slika.files[0]);
+			       firebase1(naslov.value, marka.value, model.value, cena.value, procesor.value, os.value, ram.value, rom.value, standardiStr, slika.files[0])
+	}//if
 
-	}
-	 
+})///event listener
+
+
+axios.get(`http://localhost:8080/apiapi/webapi/myresource/all/objects`).then(res=>{
 	
-	
-	//	console.log(naslov.value, marka.value, model.value, cena.value, procesor.value, os.value, ram.value, rom.value, G3.value,G4.value, LTE.value ,GSM.value, slika.files[0])
-     //  firebase1(naslov.value, marka.value, model.value, cena.value, procesor.value, os.value, ram.value, rom.value, G3.value,G4.value, LTE.value ,GSM.value, slika.files[0])
-	
+	repaintAddPhone(res.data, document.getElementById('delete-app'))
 	
 })
+
+

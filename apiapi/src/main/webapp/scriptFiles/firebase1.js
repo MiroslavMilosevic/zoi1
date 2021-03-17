@@ -14,7 +14,8 @@ firebase.initializeApp(firebaseConfig);
 
 
 function firebase1 (naslov, marka, model, cena, procesor, os, ram, rom,standardi, file){
-	
+	      console.log('firebase fnk')
+	     console.log(file)
 	    let ref = firebase.storage().ref("myPictures/");
       let myname = new Date()+" - "+file.name;
       let metadata = {

@@ -14,6 +14,7 @@ import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.FormParam;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
@@ -88,6 +89,17 @@ public class MyResource {
     	MyServices ms = new MyServices();
     
    return ms.isAdminValid(ms.getListaAdmina(), username, password);
+    } 
+    
+    @DELETE
+    @Path("delete/")
+    //  @Path("insert/{marka}/{model}/{cena}/{kategorija}/{os}/{ram}/{rom}/{standardi}/{image}/{naslov}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public boolean deletePhone(@QueryParam("id") String id, @QueryParam("username") String username, @QueryParam("password") String password) {
+ 	
+    	MyServices ms = new MyServices();
+    
+  return ms.deletePhone(Integer.parseInt(id), username, password);
     } 
     
     
