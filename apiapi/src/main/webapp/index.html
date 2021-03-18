@@ -3,14 +3,35 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="./style/index2.css">
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
 
 <div>
 
+
+<div id='upper-div'>
 <h1>Home page2</h1>
 <button id='gotoLogin'>Log in</button>
+<input type="text" id="pretraga" placeholder="pretraga" class="pretrage">
+
+	<select id="proizvodjac" class='pretrage'>
+		    <option value="">Svi</option>
+			<option value="samsung">Samsung</option>
+			<option value="Iphone">Iphone</option>
+			<option value="huawei">Huawei</option>
+			<option value="nokia">Nokia</option>
+			<option value="lenovo">Lenovo</option>
+			<option value="xiaomi">Xiaomi</option>
+		</select>
+		<label>Od</label><input type="text" id='cenaOd' class="pretrage"><label>EUR</label>
+	    <label>Do</label><input type="text" id='cenaDo' class="pretrage"><label>EUR</label>
+		<button id='poCeni'>Pretrazi po ceni</button>
+	
+
+</div>
+
 <div id="home-app">
 
 
@@ -26,6 +47,6 @@
 
 
 
-<script type="module" src="./index.js"></script>
+<script type="module" src="./index2.js"></script>
 </body>
 </html>

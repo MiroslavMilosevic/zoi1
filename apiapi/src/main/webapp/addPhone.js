@@ -1,7 +1,6 @@
 import repaintAddPhone from './scriptFiles/repaintAddPhone.js'
 import firebase1 from './scriptFiles/firebase1.js'
 import {addCheck1, standardi} from './scriptFiles/addCheckFnk.js'
-console.log('adphone js')
 let logOutButton=document.getElementById("logOutButton");
 logOutButton.addEventListener('click', function(){
 			localStorage.setItem('username', '');
@@ -10,8 +9,6 @@ logOutButton.addEventListener('click', function(){
 		window.location.href = "./index.html";
 		
 })
-console.log('bbldflasjlas')
-
 let buttonDodaj = document.getElementById('buttonDodaj');
 
 buttonDodaj.addEventListener('click', ()=>{

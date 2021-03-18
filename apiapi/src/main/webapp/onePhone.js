@@ -63,6 +63,7 @@ li10.classList.add('li-one-phone');
 li10.id='standardi';
 li10.innerText="Standardi: "+el.standardi;
 ///
+console.log('ccccccccccc')
      ul.append(li7,li1,li2,li6,li3,li4,li5,li8,li9,li10);
      app_div.append(ul); 
 }

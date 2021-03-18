@@ -1,0 +1,42 @@
+
+@charset "ISO-8859-1";
+
+body {
+	background-color: lightblue;
+}
+
+#home-app {
+	text-align: center;
+}
+
+ul, li {
+	list-style: none;
+}
+
+.li-home {
+	margin-top: 2.5em;
+	margin-bottom: 2.5em;
+}
+
+.inner-li-home {
+	font-size: 1.5em;
+}
+
+.button-detalji {
+	font-size: 1.5em;
+}
+
+img {
+	width: 7em;
+	height: 7em;
+}
+
+.pretrage{
+	
+	background-color: lightgray;
+	font-size: 1em;
+}
+label {
+	margin-left:1em;
+	margin-right: 1em; 
+}

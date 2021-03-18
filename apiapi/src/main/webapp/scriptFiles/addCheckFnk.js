@@ -27,7 +27,7 @@ function addCheck1(naslov, marka, model, cena, procesor, os, ram, rom, standardi
 		}, 2000)
 		a++;
 	}
-	if (model.value.trim().length < 3) {
+	if (model.value.trim().length < 1) {
 		model.value = 'los unos';
 		model.classList.add('input-error')
 		setTimeout(() => {

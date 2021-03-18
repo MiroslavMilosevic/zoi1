@@ -1,0 +1,44 @@
+@charset "ISO-8859-1";
+body{
+		background-color: lightblue;
+}
+
+.login-error{
+	
+	background-color: red;
+}
+
+#app{
+	background-color: lightblue;
+	text-align: center;	
+	height:100vh;
+	width: 100vw;
+}
+
+.input-login{
+	
+	margin:1em;
+	padding:0.2em;
+	border-radius:0.5em;
+	font-size: 1.8em;
+	 	
+}
+
+#buttonSubmit{
+	
+	font-size:1.4em;
+	background-color:lightgray;
+}
+
+.home-page-button{
+	position: absolute;
+	left: 0;
+	top: 0;
+	font-size: 1.5em;
+	padding:0.15em;
+}
+a{
+	text-decoration: none;
+	color: black;
+	
+}

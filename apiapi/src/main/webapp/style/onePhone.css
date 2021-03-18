@@ -1,0 +1,24 @@
+@charset "ISO-8859-1";
+
+body {
+	background-color: lightblue;
+}
+
+ul{
+	list-style: none;
+	
+}
+
+li {
+	font-size: 1.95em;
+	margin:0.25em;
+}
+
+.one-phone-app{
+	text-align: center;
+}
+
+#caption{
+	
+	text-align: center;
+}

@@ -1,0 +1,70 @@
+@charset "ISO-8859-1";
+body{
+	background-color: lightblue;
+}
+
+
+.input-error{
+	background-color:red;
+}
+.check-error-box{	
+	color:red;
+}
+.add-phone-ul{
+	
+	text-decoration:none;
+	list-style:none;
+		margin-left:0;
+		margin-right:0;
+	    padding:0;
+}
+
+#app-add-phone{
+	margin:0;
+	padding:0;
+	
+}
+
+li{
+		margin-top:1em;
+		margin-bottom:1em;
+}
+
+#buttonDodaj{
+	
+	 background-color: gray !important;
+	font-size:2em;
+}
+
+input {
+	font-size: 1.5em;
+		background-color: lightgray;
+	
+}
+
+select {
+	font-size:1.5em;
+	background-color: lightgray;
+}
+
+.delete-span{
+	font-size: 2em;
+	
+}
+.delete-button{
+		font-size: 2em;
+	
+	
+}
+#header-izbrisi{
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
