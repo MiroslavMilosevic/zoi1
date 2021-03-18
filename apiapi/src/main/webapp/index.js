@@ -1,7 +1,7 @@
 
 import repaintHome from './scriptFiles/repaintHome.js'
 
-//console.log("home.js");
+console.log("home.js");
 console.log(localStorage.getItem('username'))
 console.log(localStorage.getItem('password'))
 let gotoLoginButton = document.getElementById('gotoLogin');
